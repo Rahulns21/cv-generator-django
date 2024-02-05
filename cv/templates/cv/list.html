@@ -1,0 +1,27 @@
+{% extends "cv/base.html" %}
+
+{% block title %}Resume | Downloads{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-12">
+            <h2>CV Database Profile List</h2>
+        </div>
+    </div>
+
+    {% for profile in profiles %}
+    <div class="row">
+        <div class="col-md-6">
+            {{profile.name}}
+        </div>
+        <div class="col-md-6">
+            <a href="cv/{{profile.id}}" class="btn btn-warning">Download CV</a>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+
+{% endblock body %}
